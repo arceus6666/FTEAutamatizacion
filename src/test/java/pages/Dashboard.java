@@ -9,8 +9,10 @@ import org.openqa.selenium.By;
 public class Dashboard {
 
     public Link loginLink;
+    public Link editarPerfilLink;
 
     public Dashboard() {
-        loginLink = new Link(By.xpath("//*[@id=\"ctl00_MainContent_PanelNotAuth\"]/div[2]/div[1]/div[2]/a/img"));
+        loginLink = new Link(By.xpath("/html/body/app-root/div/a[3]"));
+        editarPerfilLink = new Link(By.xpath("/html/body/app-root/div/a[4]"));
     }
 }

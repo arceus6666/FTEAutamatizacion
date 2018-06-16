@@ -16,9 +16,8 @@ public class Login {
     public CheckBox rememberCheckBox;
 
     public Login() {
-        logginButton = new Button(By.id("ctl00_MainContent_LoginControl1_ButtonLogin"));
-        userTextBox = new TextBox(By.xpath("//*[@id=\"ctl00_MainContent_LoginControl1_TextBoxEmail\"]"));
-        passwordTextBox = new TextBox(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword"));
-        rememberCheckBox = new CheckBox(By.id("ctl00_MainContent_LoginControl1_CbRemember"));
+        userTextBox = new TextBox(By.xpath("/html/body/app-root/app-iniciar-sesion/body/div/input[1]"));
+        passwordTextBox = new TextBox(By.xpath("/html/body/app-root/app-iniciar-sesion/body/div/input[2]"));
+        logginButton = new Button(By.xpath("/html/body/app-root/app-iniciar-sesion/body/div/input[3]"));
     }
 }

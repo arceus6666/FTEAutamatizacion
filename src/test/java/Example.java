@@ -2,6 +2,7 @@ import factoryBrowser.FactoryBrowser;
 import pages.Dashboard;
 import pages.LeftMenuBar;
 import pages.Login;
+import pages.EditarPerfil;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -29,21 +30,49 @@ public class Example {
     public static Login loginPage;
     public static Dashboard dashboardPage;
     public static LeftMenuBar leftMenuBarPage;
+    public static EditarPerfil editarPerfilPage;
 
     @BeforeClass
     public static void openBrowser(){
         loginPage = new Login();
         dashboardPage = new Dashboard();
         leftMenuBarPage = new LeftMenuBar();
+        editarPerfilPage = new EditarPerfil();
     }
 
     @Test
     public void valid_UserCredential() throws InterruptedException {
-        Browser.getCurrentSesion().driver.get("http://todo.ly/");
-        //Browser.getCurrentSesion().driver.get("https://www.google.com/");
+        Browser.getCurrentSesion().driver.get("http://localhost:4200/welcome/");
 
-        dashboardPage.loginLink.click();
-        //Thread.sleep(500);
+        /**
+         * login unit test
+         * dashboardPage.loginLink.click();
+         * loginPage.userTextBox.click();
+         * loginPage.userTextBox.set("nombre");
+         * loginPage.passwordTextBox.click();
+         * loginPage.passwordTextBox.set("asdASD123@@");
+         * loginPage.logginButton.click();
+         * Thread.sleep(500);
+         */
+        
+        
+
+        /**
+         * editar perfil unit test
+         * dashboardPage.editarPerfilLink.click();
+         * editarPerfilPage.idTextBox.set("8");
+         * editarPerfilPage.userPictureTextBox.set("https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png");
+         * editarPerfilPage.mailTextBox.set("newMail");
+         * editarPerfilPage.passwordTextBox.set("myN3wP4ss@");
+         * editarPerfilPage.userTextBox.set("usernew");
+         * editarPerfilPage.nTarjetaTextBox.set("0");
+         * editarPerfilPage.acceptButton.click();
+         * Thread.sleep(500);
+         */
+        
+         
+        
+
         /*
         loginPage.userTextBox.set("arceus6666@hotmail.com");
         loginPage.passwordTextBox.set("arceusTODO41145_fail");
