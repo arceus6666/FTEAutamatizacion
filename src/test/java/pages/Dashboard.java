@@ -10,9 +10,11 @@ public class Dashboard {
 
     public Link loginLink;
     public Link editarPerfilLink;
+    public Link registrarUsuarioLink;
 
     public Dashboard() {
         loginLink = new Link(By.xpath("/html/body/app-root/div/a[3]"));
         editarPerfilLink = new Link(By.xpath("/html/body/app-root/div/a[4]"));
+        registrarUsuarioLink = new Link(By.xpath("/html/body/app-root/div/a[2]"));
     }
 }

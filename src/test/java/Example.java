@@ -1,8 +1,11 @@
 import factoryBrowser.FactoryBrowser;
+/*
 import pages.Dashboard;
 import pages.LeftMenuBar;
 import pages.Login;
 import pages.EditarPerfil;
+*/
+import pages.*;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -31,6 +34,7 @@ public class Example {
     public static Dashboard dashboardPage;
     public static LeftMenuBar leftMenuBarPage;
     public static EditarPerfil editarPerfilPage;
+    public static RegistrarUsuario registrarUsuarioPage;
 
     @BeforeClass
     public static void openBrowser(){
@@ -38,6 +42,7 @@ public class Example {
         dashboardPage = new Dashboard();
         leftMenuBarPage = new LeftMenuBar();
         editarPerfilPage = new EditarPerfil();
+        registrarUsuarioPage = new RegistrarUsuario();
     }
 
     @Test
@@ -70,7 +75,17 @@ public class Example {
          * Thread.sleep(500);
          */
         
-         
+        /**
+         * registrar usuario
+         */
+        
+        dashboardPage.registrarUsuarioLink.click();
+        registrarUsuarioPage.mailTextBox.set("anotherMail");
+        registrarUsuarioPage.passwordTextBox.set("asdASD123@@");
+        registrarUsuarioPage.userTextBox.set("anotherUser");
+        registrarUsuarioPage.acceptButton.click();
+        Thread.sleep(500);
+        
         
 
         /*
@@ -87,74 +102,9 @@ public class Example {
         // verificaciones
         Assert.assertTrue("No se pudo ingresar al sistema",leftMenuBarPage.logoutLink.isDisplayed());
         Assert.assertEquals("Error","Logout",leftMenuBarPage.logoutLink.getTextValue());
-
-
-        
-        
-        /*
-        //browser.get("https://outlook.live.com/owa/");
-        //browser.get("https://www.google.com/");
-        
-        driver.get("https://www.google.com/");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id='lst-ib']")).clear();
-        driver.findElement(By.xpath("//*[@id='lst-ib']")).sendKeys("Todo.ly");
-        driver.findElement(By.xpath("//*[@id=\"hplogo\"]")).click();
-        driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[3]/center/input[1]")).click();
         */
+        
 
-        /*
-        //browser.findElement(By.xpath("//*[@id='lst-ib']")).clear();
-        //browser.findElement(By.xpath("//*[@id='lst-ib']")).sendKeys("hotmail.com");
-        //browser.findElement(By.xpath("//*[@id=\"hplogo\"]")).click();
-        //browser.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[3]/center/input[1]")).click();
-        //browser.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/div/h3/a")).click();
-        browser.findElement(By.xpath("/html/body/section/div/div[2]/a[2]")).click();
-        browser.findElement(By.xpath("//*[@id=\"i0116\"]")).click();
-        browser.findElement(By.xpath("//*[@id=\"i0116\"]")).sendKeys("arceus6666@hotmail.com");
-        browser.findElement(By.xpath("//*[@id=\"idSIButton9\"]")).click();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("//*[@id=\"i0118\"]")).click();
-        browser.findElement(By.xpath("//*[@id=\"i0118\"]")).sendKeys("arceusHotmail41145");
-        browser.findElement(By.xpath("//*[@id=\"idSIButton9\"]")).click();
-        Thread.sleep(3000);
-        browser.findElement(By.xpath("//*[@id=\"_ariaId_26\"]")).click();
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div/span/div[1]/form/input")).click();
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div/span/div[1]/form/input")).sendKeys("valealiaga21@gmail.com");
-        Thread.sleep(500);
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]")).click();
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[6]/div[2]/div/input")).click();
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[6]/div[2]/div/input")).sendKeys("Prueba alv :v");
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]/div/div[1]/div[2]/div[2]/div[2]/div[3]/div/div[3]/div[1]/div[3]/div")).click();
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[4]/div/div[1]/div[2]/div[2]/div[2]/div[3]/div/div[3]/div[1]/div[3]/div")).sendKeys("Prueva alv :y");
-        browser.findElement(By.xpath("//*[@id=\"primaryContainer\"]/div[4]/div/div[1]/div/div[4]/div[3]/div/div[5]/div[1]/div/div[3]/div[5]/div/div[2]/div[1]/button[1]")).click();
-        */
-
-        //browser.findElement(By.xpath("")).click();
-        //browser.findElement(By.xpath("")).click();
-
-        Thread.sleep(1000);
-
-        /*
-        driver.get("http://todo.ly/");
-        Thread.sleep(500);
-        driver.findElement(By.xpath("//*[@id='ctl00_MainContent_PanelNotAuth']/div[2]/div[1]/div[2]")).click();
-        driver.findElement(By.xpath("//*[@id='ctl00_MainContent_LoginControl1_TextBoxEmail']")).sendKeys("arceus6666@hotmail.com");
-        driver.findElement(By.xpath("//*[@id='ctl00_MainContent_LoginControl1_TextBoxPassword']")).sendKeys("arceusTODO41145");
-        driver.findElement(By.xpath("//*[@id='ctl00_MainContent_LoginControl1_ButtonLogin']")).click();
-        */
-
-        //driver.findElement(By.xpath("//*[@id='MainTable']/tbody/tr/td[1]/div[6]/div")).click();
-        //driver.findElement(By.xpath("//*[@id='NewProjNameInput']")).click();
-        //driver.findElement(By.xpath("//*[@id='NewProjNameInput']")).sendKeys("automatic2");
-        //driver.findElement(By.xpath("//*[@id='NewProjNameButton']")).click();
-
-        //driver.findElement(By.xpath("//*[@id=\"ItemId_3723188\"]/table/tbody/tr/td[3]")).click();
-        //driver.findElement(By.xpath("")).
-        //driver.findElement(By.xpath("")).
-        //driver.findElement(By.xpath("")).
-
-        //Thread.sleep(2000);
 
         /*
         driver.findElement(By.xpath(".//*[@id='account']/a")).click();
