@@ -1,0 +1,34 @@
+package factoryBrowser;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by Arceus6666 on 11/06/2018.
+ */
+public class Chrome implements IBrowser {
+
+    @Override
+    public WebDriver create() {
+        String PATH_PROJECT=new File(".").getAbsolutePath().replace(".","");
+
+        System.setProperty("webdriver.chrome.driver", PATH_PROJECT+"src\\test\\java\\drivers\\chromedriver.exe");
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("credentials_enable_service", false);
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--enable-memory-info");
+        options.addArguments("--no-sandbox");
+        options.setExperimentalOption("prefs", prefs);
+
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        return driver;
+    }
+}
