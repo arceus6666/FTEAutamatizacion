@@ -14,17 +14,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import browserManager.Browser;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
+
 
 public class Example {
     //private static WebDriver driver;
@@ -53,24 +47,27 @@ public class Example {
          * login unit test
          * dashboardPage.loginLink.click();
          * loginPage.userTextBox.click();
-         * loginPage.userTextBox.set("nombre");
+         * loginPage.userTextBox.set("nombre1");
          * loginPage.passwordTextBox.click();
-         * loginPage.passwordTextBox.set("asdASD123@@");
+         * loginPage.passwordTextBox.set("pass1");
          * loginPage.logginButton.click();
          * Thread.sleep(500);
          */
-        
-        
 
         /**
          * editar perfil unit test
+         * dashboardPage.loginLink.click();
+         * loginPage.userTextBox.click();
+         * loginPage.userTextBox.set("nombre1");
+         * loginPage.passwordTextBox.click();
+         * loginPage.passwordTextBox.set("pass1");
+         * loginPage.logginButton.click();
+         * Thread.sleep(500);
          * dashboardPage.editarPerfilLink.click();
-         * editarPerfilPage.idTextBox.set("8");
          * editarPerfilPage.userPictureTextBox.set("https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png");
          * editarPerfilPage.mailTextBox.set("newMail");
          * editarPerfilPage.passwordTextBox.set("myN3wP4ss@");
          * editarPerfilPage.userTextBox.set("usernew");
-         * editarPerfilPage.nTarjetaTextBox.set("0");
          * editarPerfilPage.acceptButton.click();
          * Thread.sleep(500);
          */
@@ -78,20 +75,16 @@ public class Example {
         /**
          * registrar usuario
          */
-        
+
         dashboardPage.registrarUsuarioLink.click();
-        registrarUsuarioPage.mailTextBox.set("anotherMail");
-        registrarUsuarioPage.passwordTextBox.set("asdASD123@@");
-        registrarUsuarioPage.userTextBox.set("anotherUser");
+        registrarUsuarioPage.mailTextBox.set("autoMail");
+        registrarUsuarioPage.passwordTextBox.set("asAS12·$");
+        registrarUsuarioPage.userTextBox.set("autoUser");
         registrarUsuarioPage.acceptButton.click();
         Thread.sleep(500);
-        
-        
 
         /*
-        loginPage.userTextBox.set("arceus6666@hotmail.com");
-        loginPage.passwordTextBox.set("arceusTODO41145_fail");
-        loginPage.logginButton.click();
+
 
         if(leftMenuBarPage.logoutLink.isDisplayed()){
             leftMenuBarPage.createProjectButton.click();
@@ -104,8 +97,6 @@ public class Example {
         Assert.assertEquals("Error","Logout",leftMenuBarPage.logoutLink.getTextValue());
         */
         
-
-
         /*
         driver.findElement(By.xpath(".//*[@id='account']/a")).click();
 

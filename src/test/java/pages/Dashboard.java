@@ -1,5 +1,6 @@
 package pages;
 
+import control.Button;
 import control.Link;
 import org.openqa.selenium.By;
 
@@ -9,12 +10,12 @@ import org.openqa.selenium.By;
 public class Dashboard {
 
     public Link loginLink;
-    public Link editarPerfilLink;
+    public Button editarPerfilButton;
     public Link registrarUsuarioLink;
 
     public Dashboard() {
-        loginLink = new Link(By.xpath("/html/body/app-root/div/a[3]"));
-        editarPerfilLink = new Link(By.xpath("/html/body/app-root/div/a[4]"));
-        registrarUsuarioLink = new Link(By.xpath("/html/body/app-root/div/a[2]"));
+        loginLink = new Link(By.xpath("/html/body/app-root/div/div[3]/a"));
+        editarPerfilButton = new Button(By.xpath("/html/body/app-root/app-mostrar-usuario/body/div/button"));
+        registrarUsuarioLink = new Link(By.xpath("/html/body/app-root/div/div[2]/a"));
     }
 }
